@@ -83,5 +83,16 @@ namespace BankForm
             }
             else MessageBox.Show("Новый дебитор не создан", "Банк", MessageBoxButtons.OK);
         }
+
+        private void открытьНовыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewCredits newCredits = new NewCredits();
+            if (newCredits.ShowDialog() == DialogResult.OK)
+            {
+                dgv_debitors.DataSource = dal.GetAllDebitors();
+                MessageBox.Show("Кредит открыт", "Банк", MessageBoxButtons.OK);
+            }
+            else MessageBox.Show("Кредит не добавлен!!!", "Банк", MessageBoxButtons.OK);
+        }
     }
 }

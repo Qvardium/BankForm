@@ -270,7 +270,7 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
@@ -287,6 +287,7 @@
             this.открытьНовыйToolStripMenuItem.Name = "открытьНовыйToolStripMenuItem";
             this.открытьНовыйToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.открытьНовыйToolStripMenuItem.Text = "Открыть новый";
+            this.открытьНовыйToolStripMenuItem.Click += new System.EventHandler(this.открытьНовыйToolStripMenuItem_Click);
             // 
             // платежиToolStripMenuItem
             // 

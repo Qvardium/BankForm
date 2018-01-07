@@ -67,6 +67,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewCredits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCredits.Designer.cs">
+      <DependentUpon>NewCredits.cs</DependentUpon>
+    </Compile>
     <Compile Include="newDebitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCredits.resx">
+      <DependentUpon>NewCredits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="newDebitor.resx">
       <DependentUpon>newDebitor.cs</DependentUpon>

@@ -121,6 +121,31 @@ namespace BankForm
 
             return false;
         }
+
+        public bool saveCredit(int id, int amount)
+        {
+            string query = String.Format("use bank INSERT INTO Credits (debitorID,amount,balance,opendate) values ('{0}','{1}','{1}','{2}')"
+                , id, amount, DateTime.Today);
+            
+            using (SqlConnection con = new SqlConnection(connection_string))
+            {
+                SqlCommand com = new SqlCommand(query, con);
+
+                try
+                {
+                    con.Open();
+                    if (com.ExecuteNonQuery() == 1) return true;
+                }
+                catch
+                {
+
+                }
+
+            }
+
+
+            return false;
+        }
     }
 
     
