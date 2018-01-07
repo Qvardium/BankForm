@@ -76,7 +76,11 @@ namespace BankForm
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             newDebitor nd = new newDebitor();
-            if(nd.ShowDialog()==DialogResult.OK) MessageBox.Show("Новый дебитор создан","Банк",MessageBoxButtons.OK);
+            if (nd.ShowDialog() == DialogResult.OK)
+            {
+                dgv_debitors.DataSource = dal.GetAllDebitors();
+                MessageBox.Show("Новый дебитор создан", "Банк", MessageBoxButtons.OK);
+            }
             else MessageBox.Show("Новый дебитор не создан", "Банк", MessageBoxButtons.OK);
         }
     }

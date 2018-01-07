@@ -100,7 +100,7 @@ namespace BankForm
 
         public bool saveNewDebitor(string name, string postNumber, string phoneNumber)
         {
-            string query = String.Format("use bank INSERT INTO Debitors (name_1,postNumber,phoneNumber) value ('{0}','{1}','{2}')",name,postNumber,phoneNumber);
+            string query = String.Format("use bank INSERT INTO Debitors (name_1,postNumber,phoneNumber) values ('{0}','{1}','{2}')",name,postNumber,phoneNumber);
             
 
             using (SqlConnection con = new SqlConnection(connection_string))
@@ -110,7 +110,7 @@ namespace BankForm
                 try
                 {
                     con.Open();
-                    if(com.ExecuteNonQuery()>=1) return true;
+                    if(com.ExecuteNonQuery()==1) return true;
                 }
                 catch
                 {
