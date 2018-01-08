@@ -302,6 +302,7 @@
             this.новыйПлатежToolStripMenuItem.Name = "новыйПлатежToolStripMenuItem";
             this.новыйПлатежToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.новыйПлатежToolStripMenuItem.Text = "Новый платеж";
+            this.новыйПлатежToolStripMenuItem.Click += new System.EventHandler(this.новыйПлатежToolStripMenuItem_Click);
             // 
             // Form1
             // 

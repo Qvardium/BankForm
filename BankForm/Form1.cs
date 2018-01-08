@@ -94,5 +94,16 @@ namespace BankForm
             }
             else MessageBox.Show("Кредит не добавлен!!!", "Банк", MessageBoxButtons.OK);
         }
+
+        private void новыйПлатежToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPayment newPayment = new NewPayment();
+            if (newPayment.ShowDialog() == DialogResult.OK)
+            {
+                dgv_debitors.DataSource = dal.GetAllDebitors();
+                MessageBox.Show("Платеж выполнен", "Банк", MessageBoxButtons.OK);
+            }
+            else MessageBox.Show("Ошибка!!!", "Банк", MessageBoxButtons.OK);
+        }
     }
 }
