@@ -125,7 +125,7 @@ namespace BankForm
         public bool saveCredit(int id, int amount)
         {
             string query = String.Format("use bank INSERT INTO Credits (debitorID,amount,balance,opendate) values ('{0}','{1}','{1}','{2}')"
-                , id, amount, DateTime.Today);
+                , id, amount, DateTime.Now);
             
             using (SqlConnection con = new SqlConnection(connection_string))
             {
@@ -152,7 +152,7 @@ namespace BankForm
         {
             string query = String.Format("use bank INSERT INTO Payments (creditID,amount,paydate) values ('{0}','{1}','{2}') "+
                 "update Credits set balance = balance-{1} where Credits.id={0}"
-                , id, amount, DateTime.Today);
+                , id, amount, DateTime.Now);
 
             using (SqlConnection con = new SqlConnection(connection_string))
             {
