@@ -150,7 +150,8 @@ namespace BankForm
 
         public bool addPayment(int id, int amount)
         {
-            string query = String.Format("use bank INSERT INTO Payments (creditID,amount,paydate) values ('{0}','{1}','{2}')"
+            string query = String.Format("use bank INSERT INTO Payments (creditID,amount,paydate) values ('{0}','{1}','{2}') "+
+                "update Credits set balance = balance-{1} where Credits.id={0}"
                 , id, amount, DateTime.Today);
 
             using (SqlConnection con = new SqlConnection(connection_string))
@@ -160,7 +161,7 @@ namespace BankForm
                 try
                 {
                     con.Open();
-                    if (com.ExecuteNonQuery() == 1) return true;
+                    if (com.ExecuteNonQuery() >= 1) return true;
                 }
                 catch
                 {

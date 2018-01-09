@@ -18,7 +18,7 @@ namespace BankForm
         {
             InitializeComponent();
             debitorList.DataSource = dal.GetAllDebitors();
-            creditList.DataSource = dal.GetAllCreditsForDebitor(debitorList.SelectedIndex.ToString());
+            creditList.DataSource = dal.GetAllCreditsForDebitor(debitorList.SelectedValue.ToString());
 
         }
 
@@ -31,7 +31,9 @@ namespace BankForm
 
         private void debitorList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            creditList.DataSource = dal.GetAllCreditsForDebitor(debitorList.SelectedIndex.ToString());
+            
+            creditList.DataSource = dal.GetAllCreditsForDebitor(debitorList.SelectedValue.ToString());
+            int i=0;
         }
     }
 }
